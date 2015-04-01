@@ -1,12 +1,13 @@
 def counting_sort(a, min: 0, max:nil)
   counts = Array.new(max-min, 0)
   a.each{|num| counts[num-min] += 1}
+  counts[1..-1].each_with_index do |count, i|
+    counts[i+1] += counts[i]
+  end
   sorted = []
-  counts.each_with_index do |count, number|
-    while count != 0
-      sorted << number+min
-      count -= 1
-    end
+  a.reverse_each do |num|
+    sorted[counts[num-min]-1] = num
+    counts[num-min] -= 1
   end
   sorted
 end
@@ -24,6 +25,6 @@ if ARGV[0] == "test"
   else
     array = failed[0]
     expected = failed[1]
-    puts "O caso #{array.inspect} falhou, retornou #{bigger_sum(array).inspect} mas deveria ser #{expected.inspect}"
+    puts "O caso #{array.inspect} falhou, retornou #{counting_sort(array.map{|x| x+900}, min: 900, max: 1000).inspect} mas deveria ser #{expected.inspect}"
   end
 end
