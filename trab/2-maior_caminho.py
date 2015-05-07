@@ -32,7 +32,7 @@ def switch(state, pos1, pos2):
 
 def longest_path_to(state):
   queue = [state]
-  visited = dict([(state, 1)]) # [distance, predecessor]
+  visited = dict([(state, 1)]) # predecessor do root é 1 (poderia ser qualquer coisa)
   farthest = None
   while len(queue) > 0:
     predecessor = queue.pop()
