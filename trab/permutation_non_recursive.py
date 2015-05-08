@@ -2,7 +2,7 @@ import math
 
 class permutations:
   def __init__(self, number):
-    self.numbers = self.split(number)
+    self.numbers = split(number)
 
     self.used = {}
     self.used_in_columns = []
@@ -35,7 +35,10 @@ class permutations:
           break
 
     self.i += 1
-    return self.join(self.current)
+    number = join(self.current)
+    #if number == 231:
+    #  return self.next()
+    return number
 
   def number_can_be_pushed(self):
     if len(self.current) == len(self.numbers):
@@ -46,20 +49,20 @@ class permutations:
           return True
       return False
 
-  def split(_, number):
-    digits = []
-    while number != 0:
-      digits.insert(0, number % 10)
-      number = number / 10
-    return digits
+def split(number):
+  digits = []
+  while number != 0:
+    digits.insert(0, number % 10)
+    number = number / 10
+  return digits
 
-  def join(_, digits):
-    number = 0
-    for digit in digits:
-      number *= 10
-      number += digit
-    return number
+def join(digits):
+  number = 0
+  for digit in digits:
+    number *= 10
+    number += digit
+  return number
 
 
-#for perm in permutations([1, 2, 3]):
+#for perm in permutations(123):
 #  print perm
