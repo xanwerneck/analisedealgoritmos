@@ -1,0 +1,29 @@
+-----------------------------------
+Relatório Final
+Trabalho 1 de AA
+Grupo: 1320614 - Alexandre Werneck
+       1111111 - Hugo Roque
+-----------------------------------
+Ambiente experimental:
+Sistema operacional Linux 64 bits
+Memória 4GB
+Linguagem de programação Python
+
+-----------------------------------
+Algoritmos e estrutura de dados:
+Arquivos genéricos:
+graph_base.py
+Array (adjacents)
+
+Tarefa 1:
+Array (graph, trees)
+HashMap (visited, component_visited)
+Stack (node_visit)
+
+Tarefa 2:
+
+
+-----------------------------------
+Resultados e tempo de execução:
+Tarefa 1:
+
