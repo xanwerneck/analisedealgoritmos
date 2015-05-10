@@ -1,6 +1,6 @@
 from permutation_non_recursive import permutations
 
-BOARD_SIZE = 2
+BOARD_SIZE = 3
 NUMBER_SIZE = BOARD_SIZE**2-1
 
 def adjacents(state):
