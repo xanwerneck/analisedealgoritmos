@@ -72,11 +72,3 @@ def articulation_points():
   return points
 
 print articulation_points()
-#       
-#       .
-#     . . . .
-#     .     . .
-#   . .     .
-#     . . . .
-#         .
-#
