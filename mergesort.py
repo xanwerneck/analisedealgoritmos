@@ -10,4 +10,4 @@ def merge(lista, inicio, final, novalista):
 		novalista[esquerda] = valor
 	print novalista
 
-merge([38,16,27,39,12,27], 0, 5, [0,0,0,0,0,0])
+merge([38,16,27,39,12,27], 0, 5, [38,16,27,39,12,27])

@@ -1,14 +1,14 @@
  
-def calc(x, n, tot):
+def calc(x, n):
 	if n == 1:
-		return tot * x
+		return x
 	else:
 		if n%2 == 0:
-			return calc(x*x, n/2, tot)
+			return calc(x*x, n/2)
 		else:
-			return calc(x*x, n/2, tot) * x
+			return calc(x*x, n/2) * x
  
-res = calc(2, 10, 1)
+res = calc(2, 10)
 print res
-res = calc(2, 5, 1)
+res = calc(2, 5)
 print res
