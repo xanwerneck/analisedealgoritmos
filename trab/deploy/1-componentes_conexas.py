@@ -1,4 +1,6 @@
+import time
 from graph_base import adjacents, nodes
+
 
 def create_graph():
 	# initialize all nodes in a array
@@ -6,6 +8,7 @@ def create_graph():
 	for state in nodes():
 		graph.append(state)
 	return dfs(graph)
+
 
 def dfs(graph):
 	visited = {} # armazena todos os nos visitados
@@ -18,7 +21,7 @@ def dfs(graph):
 
 
 def search(graph, nod, visited):
-	tree_way = {}     # a lista contem o caminho pela componente conexa
+	tree_way = {}     # contem o caminho pela componente conexa
 	stack    = []     # pilha para eliminar as recursoes
 	stack.append(nod) # inicia a pilha com o no de entrada
 
@@ -33,13 +36,14 @@ def search(graph, nod, visited):
 	return tree_way
 
 
-
+ini = time.time()
 visit = create_graph()
-print len(visit)
+fim = time.time()
+print "Tempo de execucao DFS: ", fim-ini
+print "---------------------------------"
+print "Numero de comp. conexas: ", len(visit)
+print "---------------------------------"
 for x in xrange(0, len(visit)):
-	print "-------- Componente conexa "
-	#print visit[x].keys()
-	print "-------- Qtde vertices"
-	print len(visit[x])
-	print "-------- Qtde arestas"
-	print len(visit[x]) - 1
+	print "---------COMPONENTE-", x + 1
+	print "-Qtde vertices-", len(visit[x])
+	print "-Qtde arestas- ", len(visit[x]) - 1

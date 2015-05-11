@@ -8,7 +8,7 @@ Ambiente experimental:
 Sistema operacional: Linux 64 bits
 Memória: 4GB
 Linguagem de programação: Python
-Versão (Python): 
+Versão (Python): 2.7.6 
 
 -----------------------------------
 Algoritmos e estrutura de dados:
@@ -17,14 +17,33 @@ graph_base.py
 Array (adjacents)
 
 Tarefa 1:
-Array (graph, trees)
-HashMap (visited, component_visited)
-Stack (node_visit)
+-> É criado um array para armazenar cada vértice
+do grafo para a DFS, isso em tempo linear no 
+número de vértices = O(n)
+-> A DFS inicia com o vértice localizado neste array
+na posição 0 e percorre todo este array, executando um
+loop de tamanho n, porém para cada componente conexa
+ele executa o método de visita
+-> O método visita passa pelo menos uma vez a cada
+vértice da componente conexa, nesta etapa criamos uma pilha 
+em que cada vértice não visto é posto na pilha e retirado para
+visita aos adjacentes
+* O grafo e as arvores ficam armazenadas em arrays
+* Os nós visitados ficam mapeados num HashMap
+* Os nós a serem visitados ficam na pilha
+Complexidade: O(2n + m)
 
 Tarefa 2:
 
 
 -----------------------------------
 Resultados e tempo de execução:
-Tarefa 1:
+
+Tarefa 1: Saída do algoritmo
+2 componentes conexas
+181440 - vértices
+181439 - arestas
+Tempo de execução: 5.44 s
+
+
 
