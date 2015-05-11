@@ -1,4 +1,4 @@
-from graph_base import adjacents, find_empty, switch
+from graph_base import adjacents, find_empty, switch, printNodes
 
 def longest_path_to(state):
   queue = [state]
@@ -16,23 +16,12 @@ def longest_path_to(state):
   node = farthest
   path = []
   while node != 1:
-    path.insert(0, node)
+    path.append(node)
     node = visited[node]
 
   return path
 
 path = longest_path_to(123456780)
-print len(path) - 1
-print path
-
-#          123
-#          456
-#          780
-#    
-#    123         123
-#    450         456
-#    786         708
-# 
-# 123   120   123   122
-# 405   453   406   456
-# 786   786   758   078
+print "Quantity of edges: " + str(len(path) - 1)
+print "Plays: "
+printNodes(path)

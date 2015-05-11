@@ -105,4 +105,5 @@ class graph_articulation_points:
       self.child_low[node] = max(self.child_low[node], self.low[successor])
   
 
-print graph_articulation_points().get_all()
+articulations = graph_articulation_points().get_all()
+print "Articulation points per component: " + str(articulations);

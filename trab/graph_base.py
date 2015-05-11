@@ -5,6 +5,9 @@ NUMBER_SIZE = BOARD_SIZE**2-1
 
 graph = {}
 
+def nodes():
+  return _nodes()
+
 def adjacents(state):
   if graph.get(state) is None:
     graph[state] = _adjacents(state)
@@ -25,6 +28,29 @@ def switch(state, pos1, pos2):
   state += base1 * (digit2 - digit1) + base2 * (digit1 - digit2)
   return state
 
+def printNodes(nodes):
+  NODES_PER_LINE = 8
+  initial_size = len(nodes)
+  while len(nodes) != 0:
+    nodes_in_line = min(NODES_PER_LINE,len(nodes))
+    for i in reversed(range(0,3)): 
+      nodes_pieces = []
+      nodes_pieces.append("-> " if i == 1 and len(nodes) != initial_size else "   ")
+      for j in xrange(0,nodes_in_line):
+        node = nodes[j]
+        piece_pow = 10**(i*BOARD_SIZE)
+        piece = node / piece_pow
+        piece_str = str(piece)
+        if piece < 100: piece_str = "0" + piece_str
+        nodes_pieces.append(piece_str)
+        nodes[j] = node - piece * piece_pow
+      nodes_pieces.append(" ->" if i == 1 and len(nodes) > nodes_in_line else "   ")
+      print "  ".join(nodes_pieces)
+    nodes = nodes[nodes_in_line:]
+    print
+    print
+
+
 def _adjacents(state):
   empty_pos = find_empty(state)
 
@@ -36,6 +62,3 @@ def _adjacents(state):
       new_state = switch(state, empty_pos, (x,y))
       adjacents.append(new_state)
   return adjacents
-
-def nodes():
-  return _nodes()
