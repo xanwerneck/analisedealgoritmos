@@ -10,13 +10,12 @@ def articulation_points():
   low = {}
   previous = {}
   points = {}
-  qnt_root_childs = 0
   for root in nodes():
     if visited.get(root):
       continue
-    print "componente"
     next_mark = 0
     points[root] = []
+    qnt_root_childs = 0
 
     stack = [[None, root]]
     while len(stack) != 0:
@@ -27,10 +26,12 @@ def articulation_points():
           block = None
           break
         predecessor = previous.get(node)
-        if predecessor is None: # eh root
+        if node == root:
           if qnt_root_childs > 1: points[root].append(node)
         else:
-          low[node] = min(back_pre[node], tree_low.get(node) or MAGIC_WOW, pre[node])
+          node_back_pre = MAGIC_WOW if back_pre.get(node) is None else back_pre[node]
+          node_tree_low = MAGIC_WOW if tree_low.get(node) is None else tree_low[node]
+          low[node] = min(pre[node], node_back_pre, node_tree_low)
 
           if tree_low.get(predecessor) is None:
             tree_low[predecessor] = low[node]
@@ -50,13 +51,18 @@ def articulation_points():
       if block is None: break
 
       node = block.pop()
-      predecessor = block[0]
-      if visited.get(node):
-        if back_pre.get(predecessor) is None:
-          back_pre[predecessor] = pre[node]
+      origin = block[0]
+
+      if visited.get(node) and node != previous[origin]:
+        if back_pre.get(origin) is None:
+          back_pre[origin] = pre[node]
         else:
-          back_pre[predecessor] = min(back_pre[predecessor], pre[node])
+          back_pre[origin] = min(back_pre[origin], pre[node])
+
+      if visited.get(node):
         continue
+
+      predecessor = origin
 
       visited[node] = True
       pre[node] = next_mark
@@ -69,6 +75,7 @@ def articulation_points():
       for adjacent in adjacents(node):
         new_block.append(adjacent)
       stack.append(new_block)
+
   return points
 
 print articulation_points()
