@@ -2,12 +2,13 @@
 Relatório Final
 Trabalho 1 de AA
 Grupo: 1320614 - Alexandre Werneck
-       1111111 - Hugo Roque
+       1311162 - Hugo Roque
 -----------------------------------
 Ambiente experimental:
-Sistema operacional Linux 64 bits
-Memória 4GB
-Linguagem de programação Python
+Sistema operacional: Linux 64 bits
+Memória: 4GB
+Linguagem de programação: Python
+Versão (Python): 
 
 -----------------------------------
 Algoritmos e estrutura de dados:
