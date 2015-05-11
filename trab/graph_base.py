@@ -36,5 +36,6 @@ def _adjacents(state):
       new_state = switch(state, empty_pos, (x,y))
       adjacents.append(new_state)
   return adjacents
+
 def nodes():
   return _nodes()
