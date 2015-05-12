@@ -107,3 +107,5 @@ Tempo de execução: 4.04s
 ->Tarefa 3: Saída do algoritmo
 -------------- Pontos de articulacao por componente-{123456780: [], 123456870: []}
 Tempo de execucao:  9.00s
+
+----------------------------------------------------------------------------------
