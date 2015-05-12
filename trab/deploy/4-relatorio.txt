@@ -20,10 +20,12 @@ Tarefa 1:
 -> É criado um array para armazenar cada vértice
 do grafo para a DFS, isso em tempo linear no 
 número de vértices = O(n)
+
 -> A DFS inicia com o vértice localizado neste array
 na posição 0 e percorre todo este array, executando um
 loop de tamanho n, porém para cada componente conexa
 ele executa o método de visita
+
 -> O método visita passa pelo menos uma vez a cada
 vértice da componente conexa, nesta etapa criamos uma pilha 
 em que cada vértice não visto é posto na pilha e retirado para
@@ -34,6 +36,45 @@ visita aos adjacentes
 Complexidade: O(2n + m)
 
 Tarefa 2:
+-> Faz BFS, armazenando no hash "visited" o predecessor dos vértices
+que foram visitados para que seja possível reconstruir o caminho de um
+dos nós da última camada da BFS, já que estes serão os mais distantes
+do nó "raiz" da BFS.
+
+Tarefa 3:
+-> Estados do grafo que são armazenados (todas são hashes):
+ * visited: True se o nó já foi visitado.
+ * pre: Número pré do nó.
+ * back_pre: Menor pré dos nós adjacentes cujas arestas não fazem parte
+             da árvore da DFS. (Back edges)
+ * tree_low: Menor low dos nós filhos na árvore da DFS.
+ * low: Menor valor dentre o pré, back_pre e tree_low de um nó.
+ * child_low: Maior low dentre os vértices adjacentes.
+ * previous: Predecessor do nó na árvore da DFS.
+ * points: Pontos de articulação encontrados.
+
+-> Estados armazenados por DFS:
+ * root: Raiz da DFS
+ * qnt_root_childs: Quantidade de nós filhos da raiz na árvore da DFS.
+ * next_pre: Número pré que será atribuido ao próximo vértice visitado.
+ * stack: Pilha usada para realizar a DFS. A pilha guarda blocos(arrays)
+          cujo primeiro elemento é o nó que foi visitado para que os
+					próximos entrassem na pilha.
+					Logo, dado o grafo [(A,B),(A,C),(C,D)] começando a DFS em A teremos:
+					[[None, A]] # None, pois A é root
+
+					Depois que visitarmos A o bloco terá um único elemento e por isso
+					será retirado da pilha, assim como os adjacentes de A serão adicionados:
+					[[A, B, C]] # Apartir de A foram adicionados os vértices B e C.
+
+					Agora o algoritmo visitará o nó C e adicionará seus elementos à pilha mas
+					criando outro bloco:
+					[[A,B],[C,B,D]] # Apartir de C foram adicionados os vértices B e D.
+
+					Sempre que um bloco fica com o primeiro elemento é o momento de fazer a
+					visita do que seria equivalente à volta no algoritmo recursivo, onde
+					atribuiríamos o pós, por exemplo.
+-> O algoritmo é baseado no PDF graphapps.pdf.
 
 
 -----------------------------------
