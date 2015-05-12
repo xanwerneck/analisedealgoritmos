@@ -12,9 +12,6 @@ Versão (Python): 2.7.6
 
 -----------------------------------
 Algoritmos e estrutura de dados:
-Arquivos genéricos:
-graph_base.py
-Array (adjacents)
 
 Tarefa 1:
 -> É criado um array para armazenar cada vértice
@@ -74,17 +71,46 @@ Tarefa 3:
 					Sempre que um bloco fica com o primeiro elemento é o momento de fazer a
 					visita do que seria equivalente à volta no algoritmo recursivo, onde
 					atribuiríamos o pós, por exemplo.
--> O algoritmo é baseado no PDF graphapps.pdf.
+-> O algoritmo é baseado em:
+http://www.eecs.wsu.edu/~holder/courses/CptS223/spr08/slides/graphapps.pdf
 
 
 -----------------------------------
 Resultados e tempo de execução:
 
-Tarefa 1: Saída do algoritmo
+->Tarefa 1: Saída do algoritmo
 2 componentes conexas
 181440 - vértices
 181439 - arestas
-Tempo de execução: 5.44 s
+Tempo de execução: 5.44...
 
+->Tarefa 2: Saída do algoritmo
+Quantidade de arestas - 31
+
+Jogadas:
+     867  867  867  860  806  856  856  856     
+     254  254  250  257  257  207  217  217   ->
+     301  310  314  314  314  314  304  340     
+
+
+     856  850  805  815  815  815  815  815     
+->   210  216  216  206  026  326  326  326   ->
+     347  347  347  347  347  047  407  470     
+
+
+     815  815  815  015  105  150  152  152     
+->   320  302  032  832  832  832  830  803   ->
+     476  476  476  476  476  476  476  476     
+
+
+     152  152  152  152  102  120  123  123     
+->   083  483  483  403  453  453  450  456     
+     476  076  706  786  786  786  786  780  
+
+Tempo de execução: 4.04...
+
+->Tarefa 3: Saída do algoritmo
+-------------- Pontos de articulacao por componente-{123456780: [], 123456870: []}
+Tempo de execucao:  9.00...
 
 

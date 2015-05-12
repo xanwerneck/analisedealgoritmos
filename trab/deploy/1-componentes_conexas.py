@@ -39,7 +39,7 @@ def search(graph, nod, visited):
 ini = time.time()
 visit = create_graph()
 fim = time.time()
-print "Tempo de execucao DFS: ", fim-ini
+print "Tempo de execucao: ", fim-ini
 print "---------------------------------"
 print "Numero de comp. conexas: ", len(visit)
 print "---------------------------------"
