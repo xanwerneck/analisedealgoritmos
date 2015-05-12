@@ -14,23 +14,18 @@ Versão (Python): 2.7.6
 Algoritmos e estrutura de dados:
 
 Tarefa 1:
--> É criado um array para armazenar cada vértice
-do grafo para a DFS, isso em tempo linear no 
-número de vértices = O(n)
-
--> A DFS inicia com o vértice localizado neste array
-na posição 0 e percorre todo este array, executando um
-loop de tamanho n, porém para cada componente conexa
-ele executa o método de visita
+-> A DFS recebe o grafo como argumento e inicia o 
+caminho a partir dos vértices, a cada vértice não visitado
+ela chama o método visita que percorre a componente conexa
+deste vértice a partir da lista de adjacentes deste.
 
 -> O método visita passa pelo menos uma vez a cada
-vértice da componente conexa, nesta etapa criamos uma pilha 
-em que cada vértice não visto é posto na pilha e retirado para
+vértice da componente conexa, nesta etapa utiliza uma pilha 
+em que cada vértice não visitado é posto na pilha e retirado para
 visita aos adjacentes
 * O grafo e as arvores ficam armazenadas em arrays
 * Os nós visitados ficam mapeados num HashMap
 * Os nós a serem visitados ficam na pilha
-Complexidade: O(2n + m)
 
 Tarefa 2:
 -> Faz BFS, armazenando no hash "visited" o predecessor dos vértices
@@ -82,7 +77,7 @@ Resultados e tempo de execução:
 2 componentes conexas
 181440 - vértices
 181439 - arestas
-Tempo de execução: 5.44...
+Tempo de execução: 5.44s
 
 ->Tarefa 2: Saída do algoritmo
 Quantidade de arestas - 31
@@ -107,36 +102,8 @@ Jogadas:
 ->   083  483  483  403  453  453  450  456     
      476  076  706  786  786  786  786  780  
 
-Tempo de execução: 4.04...
+Tempo de execução: 4.04s
 
 ->Tarefa 3: Saída do algoritmo
 -------------- Pontos de articulacao por componente-{123456780: [], 123456870: []}
-Tempo de execucao:  9.00...
-
-Tarefa 2: Saída do algoritmo
-Quantidade de arestas: 31
-Jogadas: 
-     867  867  867  860  806  856  856  856     
-     254  254  250  257  257  207  217  217   ->
-     301  310  314  314  314  314  304  340     
-
-
-     856  850  805  815  815  815  815  815     
-->   210  216  216  206  026  326  326  326   ->
-     347  347  347  347  347  047  407  470     
-
-
-     815  815  815  015  105  150  152  152     
-->   320  302  032  832  832  832  830  803   ->
-     476  476  476  476  476  476  476  476     
-
-
-     152  152  152  152  102  120  123  123     
-->   083  483  483  403  453  453  450  456     
-     476  076  706  786  786  786  786  780     
-Tempo de execução: 4.47s
-
-Tarefa 3: Saída do algoritmo
-Pontos de articulação por componente conexa: {123456780: [], 123456870: []}
-Tempo de execução: 9.46s
-
+Tempo de execucao:  9.00s
