@@ -1,4 +1,5 @@
 from distance_compute import distance
+import time
 
 def less_distance_b_force(plan):
 	closest       = distance(plan[0], plan[1])
@@ -24,5 +25,9 @@ plan = [
 [3.4,7]
 ]
 
+ini = time.time()
 closest = less_distance_b_force(plan)
-print closest
+fim = time.time()
+print "------ Algoritmo de forca bruta ------"
+print "Tempo de execucao: ", fim-ini
+print "Par de pontos mais proximo: ", closest
