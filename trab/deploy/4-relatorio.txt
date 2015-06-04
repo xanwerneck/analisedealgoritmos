@@ -51,21 +51,22 @@ Tarefa 3:
  * next_pre: Número pré que será atribuido ao próximo vértice visitado.
  * stack: Pilha usada para realizar a DFS. A pilha guarda blocos(arrays)
           cujo primeiro elemento é o nó que foi visitado para que os
-					próximos entrassem na pilha.
-					Logo, dado o grafo [(A,B),(A,C),(C,D)] começando a DFS em A teremos:
-					[[None, A]] # None, pois A é root
+	  próximos entrassem na pilha.
+	  Logo, dado o grafo [(A,B),(A,C),(C,D)] começando a DFS em A teremos:
+	  [[None, A]] # None, pois A é root
 
-					Depois que visitarmos A o bloco terá um único elemento e por isso
-					será retirado da pilha, assim como os adjacentes de A serão adicionados:
-					[[A, B, C]] # Apartir de A foram adicionados os vértices B e C.
+	  Depois que visitarmos A o bloco terá um único elemento e por isso
+	  será retirado da pilha, assim como os adjacentes de A serão adicionados:
+	  [[A, B, C]] # Apartir de A foram adicionados os vértices B e C.
 
-					Agora o algoritmo visitará o nó C e adicionará seus elementos à pilha mas
-					criando outro bloco:
-					[[A,B],[C,B,D]] # Apartir de C foram adicionados os vértices B e D.
+     	  Agora o algoritmo visitará o nó C e adicionará seus elementos à pilha mas
+	  criando outro bloco:
+	  [[A,B],[C,B,D]] # Apartir de C foram adicionados os vértices B e D.
 
-					Sempre que um bloco fica com o primeiro elemento é o momento de fazer a
-					visita do que seria equivalente à volta no algoritmo recursivo, onde
-					atribuiríamos o pós, por exemplo.
+	  Sempre que um bloco fica com o primeiro elemento é o momento de fazer a
+	  visita do que seria equivalente à volta no algoritmo recursivo, onde
+	  atribuiríamos o pós, por exemplo.
+
 -> O algoritmo é baseado em:
 http://www.eecs.wsu.edu/~holder/courses/CptS223/spr08/slides/graphapps.pdf
 

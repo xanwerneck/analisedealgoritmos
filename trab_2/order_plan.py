@@ -24,7 +24,7 @@ def merge_y(lista_x,lista_y):
   elif lista_y == []:
       return lista_x
   else:
-      if lista_x[0][0] < lista_y[0][0]:
+      if lista_x[0][1] < lista_y[0][1]:
           return [lista_x[0]] + merge_y(lista_x[1:],lista_y)
       else:
           return [lista_y[0]] + merge_y(lista_x,lista_y[1:])

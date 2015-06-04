@@ -1,0 +1,32 @@
+Solução dos exercícios:
+1 - A ideia é manter um vetor booleano com as informações 
+de uso de determinado i da solução
+Com isso a cada i, se A[i, w] faz parte da solução eu guardo
+save[i, w] = 1 e caso contrário eu guardo save[i, w] = 0
+Executo ao final um for reverso imprimindo i, quando
+save[i, W] == 1
+save[i-1, W- peso[i]] == 1
+save[i-2, W- peso[i-1]] == 1
+...
+
+Input: n, w 1 ,...,w N, v 1 ,...,v N
+	for w = 0 to W
+		M[0, w] = 0
+	for i = 1 to n
+		for w = 1 to W
+			if (peso[i] > w)
+				M[i, w] = M[i-1, w]
+				save[i, w] = 0
+			else
+				M[i, w] = max {M[i-1, w], v i + M[i-1, w - peso[i] ]}
+				save[i, w] = 1
+	return M[n, W] 
+	tmp = W
+	for i = n down to 1
+		if(save[i, tmp] == 1)
+			print i
+  			tmp = tmp - peso[i]
+	return M[n, W] 
+	
+
+2 - 
