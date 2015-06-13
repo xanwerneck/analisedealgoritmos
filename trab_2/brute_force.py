@@ -1,16 +1,22 @@
 from distance_compute import distance
+import time
 
 def less_distance_b_force(plan):
+	ini = fim = time.time()
 	closest       = distance(plan[0], plan[1])
 	closest_point = [plan[0],plan[1]]
 	for i in xrange(0,len(plan)):
 		for j in xrange(0,len(plan)):
-			if i != j:
-				dist = distance(plan[i], plan[j])
-				if dist < closest:
-					closest       = dist
-					closest_point = [plan[i],plan[j]]
-	return closest_point
+			if (fim - ini) < 180:
+				if i != j:
+					dist = distance(plan[i], plan[j])
+					if dist < closest:
+						closest       = dist
+						closest_point = [plan[i],plan[j]]
+				fim = time.time()
+			else:
+				return null
+	return distance(closest_point[0], closest_point[1])
 
 
 #plan = [

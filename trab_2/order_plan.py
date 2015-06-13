@@ -1,3 +1,5 @@
+import sys
+sys.setrecursionlimit(100000) # to force recursion limit
 
 def merge_x(lista_x,lista_y):
   if lista_x == []:
