@@ -1,31 +1,11 @@
 from order_plan import order_by_x, order_by_y
 from domain import Pair
 
-def get_points_in_L(left, right, l_middle_x, l_half_width):
-  l_points = []
-  for point in left:
-    if point[0] >= (l_middle_x - l_half_width):
-      l_points.append(point)
-
-  for point in right:
-    if point[0] <= (l_middle_x + l_half_width):
-      l_points.append(point)
-
-  return l_points
-      
-
-def compute_middle_x_of_L(left, right):
-  if len(left) == 0: return right[0][0]
-  if len(right) == 0: return left[-1][0]
-
-  return (left[-1][0] + right[0][0]) / 2
-
-def less_distance_d_conqueer(plan):
+def less_distance_d_conquer(plan):
   plan = order_by_x(plan)
   return closest_pair(plan)
 
 def closest_pair(plan):
-
   if len(plan) <= 1:
     return None
   elif len(plan) == 2:
@@ -51,6 +31,25 @@ def closest_pair(plan):
       closest_pair_known = min(pair, closest_pair_known)
 
   return closest_pair_known
+
+def compute_middle_x_of_L(left, right):
+  if len(left) == 0: return right[0][0]
+  if len(right) == 0: return left[-1][0]
+
+  return (left[-1][0] + right[0][0]) / 2
+
+def get_points_in_L(left, right, l_middle_x, l_half_width):
+  l_points = []
+  for point in left:
+    if point[0] >= (l_middle_x - l_half_width):
+      l_points.append(point)
+
+  for point in right:
+    if point[0] <= (l_middle_x + l_half_width):
+      l_points.append(point)
+
+  return l_points
+      
 #  
 #
 #
