@@ -1,5 +1,5 @@
 from order_plan import order_by_x, order_by_y
-from distance_compute import distance
+from domain import Pair
 
 def get_points_in_L(left, right, l_middle_x, l_half_width):
   l_points = []
@@ -27,31 +27,30 @@ def less_distance_d_conqueer(plan):
 def closest_pair(plan):
 
   if len(plan) <= 1:
-    return 0
+    return None
   elif len(plan) == 2:
-    return distance(plan[0], plan[1])
+    return Pair(plan[0], plan[1])
   elif len(plan) == 3:
-    return min(distance(plan[0], plan[1]), distance(plan[1], plan[2]), distance(plan[0], plan[2]))
+    return min(Pair(plan[0], plan[1]), Pair(plan[1], plan[2]), Pair(plan[0], plan[2]))
 
   left  = plan[:len(plan)/2]
   right = plan[len(plan)/2:]
 
   min_left  = closest_pair(left)
   min_right = closest_pair(right)
-  min_distance_known = min(min_left, min_right)
+  closest_pair_known = min(min_left, min_right)
 
   middle_x = compute_middle_x_of_L(left, right)
 
-  l_points = get_points_in_L(left, right, middle_x, min_distance_known)
+  l_points = get_points_in_L(left, right, middle_x, closest_pair_known.distance())
   l_points = order_by_y(l_points)
 
   for i in xrange(0, len(l_points)-1):
     for j in xrange(i+1, min(i+8, len(l_points))):
-      dist = distance(l_points[i], l_points[j])
-      if dist < min_distance_known:
-        min_distance_known = dist
+      pair = Pair(l_points[i], l_points[j])
+      closest_pair_known = min(pair, closest_pair_known)
 
-  return min_distance_known
+  return closest_pair_known
 #  
 #
 #
@@ -69,5 +68,4 @@ def closest_pair(plan):
 #]
 #
 #closest_pair = closest_pair(plan)
-#print closest_pair
-#
+#print closest_pair.distance()

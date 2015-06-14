@@ -1,24 +1,21 @@
-from distance_compute import distance
+from domain import Pair
 import time
 
 def less_distance_b_force(plan):
-	ini = fim = time.time()
-	closest       = distance(plan[0], plan[1])
-	closest_point = [plan[0],plan[1]]
-	for i in xrange(0,len(plan)):
-		for j in xrange(0,len(plan)):
-			if (fim - ini) < 180:
-				if i != j:
-					dist = distance(plan[i], plan[j])
-					if dist < closest:
-						closest       = dist
-						closest_point = [plan[i],plan[j]]
-				fim = time.time()
-			else:
-				return null
-	return distance(closest_point[0], closest_point[1])
-
-
+  ini = fim = time.time()
+  closest       = Pair(plan[0], plan[1])
+  for i in xrange(0,len(plan)):
+    for j in xrange(0,len(plan)):
+      if (fim - ini) < 180:
+        if i != j:
+          pair = Pair(plan[i], plan[j])
+          closest = min(pair, closest)
+        fim = time.time()
+      else:
+        return None
+  return closest
+#
+#
 #plan = [
 #[1,2],
 #[3,8],
@@ -36,3 +33,4 @@ def less_distance_b_force(plan):
 #print "------ Algoritmo de forca bruta ------"
 #print "Tempo de execucao: ", fim-ini
 #print "Par de pontos mais proximo: ", closest
+#print "Distancia: ", closest.distance()
