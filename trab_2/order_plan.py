@@ -1,5 +1,4 @@
 import sys
-sys.setrecursionlimit(100000) # to force recursion limit
  
 def order_by_x(lista):
   return mergesort(lista, lambda pt1,pt2: pt1.x < pt2.x)

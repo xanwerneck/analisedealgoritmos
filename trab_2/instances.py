@@ -1,21 +1,18 @@
-import random, decimal
+from random import random
 from domain import Point
 
-def instances():
-  k = 0
-  instances = [None] * 120
-  for x in xrange(0, 12):
-    for y in xrange(0, 10):
-      instances[k] = generate_instance(25*(2**x))
-      k += 1
-  return instances
+INSTANCES_CACHE = [None for i in xrange(0, 12)]
+
+def each_instance_group(do_something):
+  for i in xrange(0, 4):
+    points_qnt = 25*(2**i)
+    if INSTANCES_CACHE[i] is None:
+      INSTANCES_CACHE[i] = [generate_instance(points_qnt) for j in xrange(0, 10)]
+    do_something(INSTANCES_CACHE[i], points_qnt)
 
 def generate_instance(size):
-  plan = []
-  for x in xrange(0, size):
-    ponto = Point(0,0)
-    ponto.x = float(decimal.Decimal(str(random.random())))
-    ponto.y = float(decimal.Decimal(str(random.random())))
-    plan.append(ponto)
+  plan = [None] * size
+  for i in xrange(0, size):
+    plan[i] = Point(random(),random())
   return plan
 

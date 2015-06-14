@@ -6,7 +6,7 @@ class Point:
     self.y = y
 
   def __str__(self):
-    return "(" + str(self.x) + " , " + str(self.y) + ")"
+    return "(%.3f , %.3f)" % (self.x, self.y)
 
 class Pair:
   def __init__(self, point1, point2):
