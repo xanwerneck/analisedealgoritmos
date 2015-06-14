@@ -1,4 +1,4 @@
-from domain import Pair
+from domain import Pair, Point
 import time
 
 def less_distance_b_force(plan):
@@ -14,17 +14,17 @@ def less_distance_b_force(plan):
       else:
         return None
   return closest
-#
-#
+
+
 #plan = [
-#[1,2],
-#[3,8],
-#[2,1],
-#[3,7],
-#[8,9],
-#[2,6],
-#[3.5,7],
-#[3.4,7]
+#  Point(1,2),
+#  Point(3,8),
+#  Point(2,1),
+#  Point(3,7),
+#  Point(8,9),
+#  Point(2,6),
+#  Point(3.5,7),
+#  Point(3.4,7)
 #]
 #
 #ini = time.time()

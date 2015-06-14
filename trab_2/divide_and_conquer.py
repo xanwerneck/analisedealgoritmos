@@ -1,5 +1,5 @@
 from order_plan import order_by_x, order_by_y
-from domain import Pair
+from domain import Pair, Point
 
 def less_distance_d_conquer(plan):
   plan = order_by_x(plan)
@@ -33,38 +33,39 @@ def closest_pair(plan):
   return closest_pair_known
 
 def compute_middle_x_of_L(left, right):
-  if len(left) == 0: return right[0][0]
-  if len(right) == 0: return left[-1][0]
+  if len(left) == 0: return right[0].x
+  if len(right) == 0: return left[-1].x
 
-  return (left[-1][0] + right[0][0]) / 2
+  return (left[-1].x + right[0].x) / 2
 
 def get_points_in_L(left, right, l_middle_x, l_half_width):
   l_points = []
   for point in left:
-    if point[0] >= (l_middle_x - l_half_width):
+    if point.x >= (l_middle_x - l_half_width):
       l_points.append(point)
 
   for point in right:
-    if point[0] <= (l_middle_x + l_half_width):
+    if point.x <= (l_middle_x + l_half_width):
       l_points.append(point)
 
   return l_points
       
-#  
-#
-#
-#
+  
+
+
+
 #plan = [
-# [1,2],
-# [3,8],
-# [2,1],
-# [3,7],
-# [8,9],
-# [2,6],
-# [3.5,7],
-# [3.4,7],
-# [1,5]
+# Point(1,2),
+# Point(3,8),
+# Point(2,1),
+# Point(3,7),
+# Point(8,9),
+# Point(2,6),
+# Point(3.5,7),
+# Point(3.4,7),
+# Point(1,5)
 #]
 #
 #closest_pair = closest_pair(plan)
+#print closest_pair
 #print closest_pair.distance()

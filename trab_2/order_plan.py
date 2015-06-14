@@ -2,10 +2,10 @@ import sys
 sys.setrecursionlimit(100000) # to force recursion limit
  
 def order_by_x(lista):
-  return mergesort(lista, lambda pt1,pt2: pt1[0] < pt2[0])
+  return mergesort(lista, lambda pt1,pt2: pt1.x < pt2.x)
  
 def order_by_y(lista):
-  return mergesort(lista, lambda pt1,pt2: pt1[1] < pt2[1])
+  return mergesort(lista, lambda pt1,pt2: pt1.y < pt2.y)
 
 def mergesort(array, is_picking_from_first):
   if len(array) <= 1:
