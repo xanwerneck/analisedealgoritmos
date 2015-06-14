@@ -1,86 +1,73 @@
 from order_plan import order_by_x, order_by_y
 from distance_compute import distance
 
-def get_closest(left, right, median, min_general):
-	closest_plan = []
-	for x in xrange(0, len(left)):
-		if left[x][0] >= (median - min_general):
-			closest_plan.append(left[x])
+def get_points_in_L(left, right, l_middle_x, l_half_width):
+  l_points = []
+  for point in left:
+    if point[0] >= (l_middle_x - l_half_width):
+      l_points.append(point)
 
-	for x in xrange(0, len(right)):
-		if right[x][0] <= (median + min_general):
-			closest_plan.append(right[x])
+  for point in right:
+    if point[0] <= (l_middle_x + l_half_width):
+      l_points.append(point)
 
-	return closest_plan
-			
+  return l_points
+      
 
-def computeL(left, right):
-	last_left = 0
-	if len(left) > 0:
-		last_left   = left[len(left) - 1][0]
+def compute_middle_x_of_L(left, right):
+  if len(left) == 0: return right[0][0]
+  if len(right) == 0: return left[-1][0]
 
-	first_right = 0
-	if len(right) > 0:
-		first_right = right[0][0]
-
-	return (last_left + first_right) / 2
+  return (left[-1][0] + right[0][0]) / 2
 
 def less_distance_d_conqueer(plan):
-	plan = order_by_x(plan)
-	return closest_pair(plan)
+  plan = order_by_x(plan)
+  return closest_pair(plan)
 
 def closest_pair(plan):
 
-	if len(plan) == 1:
-		return 999999
+  if len(plan) <= 1:
+    return 0
+  elif len(plan) == 2:
+    return distance(plan[0], plan[1])
+  elif len(plan) == 3:
+    return min(distance(plan[0], plan[1]), distance(plan[1], plan[2]), distance(plan[0], plan[2]))
 
-	left  = plan[:len(plan)/2]
-	right = plan[len(plan)/2:]
+  left  = plan[:len(plan)/2]
+  right = plan[len(plan)/2:]
 
-	min_left  = closest_pair(left)
-	min_right = closest_pair(right)
+  min_left  = closest_pair(left)
+  min_right = closest_pair(right)
+  min_distance_known = min(min_left, min_right)
 
-	median = computeL(left,right)
+  middle_x = compute_middle_x_of_L(left, right)
 
-	min_general = min_left
-	if min_general > min_right:
-		min_general = min_right
+  l_points = get_points_in_L(left, right, middle_x, min_distance_known)
+  l_points = order_by_y(l_points)
 
-	middle = get_closest(left, right, median, min_general)
+  for i in xrange(0, len(l_points)-1):
+    for j in xrange(i+1, min(i+8, len(l_points))):
+      dist = distance(l_points[i], l_points[j])
+      if dist < min_distance_known:
+        min_distance_known = dist
 
-	middle_ordered = order_by_y(middle)
-
-
-	for x in xrange(0, len(middle_ordered)):
-		begin = x + 1
-		if begin == len(middle_ordered):
-			return min_general
-		if (begin + 8) - len(middle_ordered) >= 0:
-			end = len(middle_ordered)
-		else:
-			end = begin + 8
-		for y in xrange(begin, end):
-			dist = distance(middle_ordered[x], middle_ordered[y])
-			if dist < min_general:
-				min_general = dist
-
-	return min_general
-	
-
-
-
+  return min_distance_known
+#  
+#
+#
+#
 #plan = [
-#	[1,2],
-#	[3,8],
-#	[2,1],
-#	[3,7],
-#	[8,9],
-#	[2,6],
-#	[3.5,7],
-#	[3.4,7],
-#	[1,5]
+# [1,2],
+# [3,8],
+# [2,1],
+# [3,7],
+# [8,9],
+# [2,6],
+# [3.5,7],
+# [3.4,7],
+# [1,5]
 #]
 #
-#closest_pair = div_and_conquer(plan)
+#closest_pair = closest_pair(plan)
 #print closest_pair
-
+#
