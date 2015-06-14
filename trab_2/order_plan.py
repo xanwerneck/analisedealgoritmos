@@ -1,39 +1,31 @@
 import sys
 sys.setrecursionlimit(100000) # to force recursion limit
-
-def merge_x(lista_x,lista_y):
-  if lista_x == []:
-      return lista_y
-  elif lista_y == []:
-      return lista_x
-  else:
-      if lista_x[0][0] < lista_y[0][0]:
-          return [lista_x[0]] + merge_x(lista_x[1:],lista_y)
-      else:
-          return [lista_y[0]] + merge_x(lista_x,lista_y[1:])
  
 def order_by_x(lista):
-  if len(lista) <= 1:
-     return lista
-  else:
-      middle = len(lista) // 2
-      return merge_x(order_by_x(lista[:middle]), order_by_x(lista[middle:]))
-
-
-def merge_y(lista_x,lista_y):
-  if lista_x == []:
-      return lista_y
-  elif lista_y == []:
-      return lista_x
-  else:
-      if lista_x[0][1] < lista_y[0][1]:
-          return [lista_x[0]] + merge_y(lista_x[1:],lista_y)
-      else:
-          return [lista_y[0]] + merge_y(lista_x,lista_y[1:])
+  return mergesort(lista, lambda pt1,pt2: pt1[0] < pt2[0])
  
 def order_by_y(lista):
-  if len(lista) <= 1:
-     return lista
+  return mergesort(lista, lambda pt1,pt2: pt1[1] < pt2[1])
+
+def mergesort(array, is_picking_from_first):
+  if len(array) <= 1:
+    return array
   else:
-      middle = len(lista) // 2
-      return merge_y(order_by_y(lista[:middle]), order_by_y(lista[middle:]))
+    first_half = mergesort(array[:len(array)/2], is_picking_from_first)
+    second_half = mergesort(array[len(array)/2:], is_picking_from_first)
+    return merge(first_half, second_half, is_picking_from_first)
+
+def merge(array1, array2, is_picking_from_first):
+  merged = []
+  i = 0
+  j = 0
+  while len(array1) > i and len(array2) > j:
+    if is_picking_from_first(array1[i], array2[j]):
+      merged.append(array1[i])
+      i += 1
+    else:
+      merged.append(array2[j])
+      j += 1
+
+  merged = merged + (array1[i:] if len(array2) == j else array2[j:])
+  return merged
