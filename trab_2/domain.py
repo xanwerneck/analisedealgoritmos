@@ -18,11 +18,11 @@ class Pair:
     cateto_second = (self.point1.y - self.point2.y)**2
     return sqrt(cateto_first + cateto_second)
 
-  # A pair is greater than other if its distance is bigger
+  # Um par eh maior que outro se sua distancia eh maior
   def __gt__(self, pair):
     return self.distance() > pair.distance()
 
-  # A pair is equal other if both distances are equal
+  # Dois pares sao iguais se suas distancias forem iguais  
   def __eq__(self, pair):
     return self.distance() == pair.distance()
 

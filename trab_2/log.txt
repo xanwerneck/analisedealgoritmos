@@ -288,5 +288,5 @@ Usando 51200 pontos: (Tempo / Distancia)
   5.155 / 0.0000099
   5.250 / 0.0000063
   Tempo medio: 5.159
----- Verifying if computed distances are the same ----
-  All calculated distances are equal
+---- Verificando se as distancias computadas sao iguais ----
+  Todas as distancias calculadas sao iguais

@@ -1,14 +1,19 @@
 from random import random
 from domain import Point
 
-INSTANCES_CACHE = [None for i in xrange(0, 12)]
+INSTANCES_CACHE = [None] * 12
 
-def each_instance_group(do_something):
+#
+# @desc   : itera por cada grupo de 10 instancias
+#
+# @params : do_something = funcao que processa o grupo de 10 instancias
+#
+def foreach_instance_group(do_something):
   for i in xrange(0, 12):
     points_qnt = 25*(2**i)
     if INSTANCES_CACHE[i] is None:
       INSTANCES_CACHE[i] = [generate_instance(points_qnt) for j in xrange(0, 10)]
-    do_something(INSTANCES_CACHE[i], points_qnt)
+    do_something(INSTANCES_CACHE[i])
 
 def generate_instance(size):
   plan = [None] * size

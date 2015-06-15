@@ -16,23 +16,3 @@ def less_distance_b_force(plan):
       else:
         return None
   return closest
-
-
-#plan = [
-#  Point(1,2),
-#  Point(3,8),
-#  Point(2,1),
-#  Point(3,7),
-#  Point(8,9),
-#  Point(2,6),
-#  Point(3.5,7),
-#  Point(3.4,7)
-#]
-#
-#ini = time.time()
-#closest = less_distance_b_force(plan)
-#fim = time.time()
-#print "------ Algoritmo de forca bruta ------"
-#print "Tempo de execucao: ", fim-ini
-#print "Par de pontos mais proximo: ", closest
-#print "Distancia: ", closest.distance()

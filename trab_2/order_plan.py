@@ -6,20 +6,21 @@ def order_by_x(lista):
 def order_by_y(lista):
   return mergesort(lista, lambda pt1,pt2: pt1.y < pt2.y)
 
-def mergesort(array, is_picking_from_first):
+def mergesort(array, compare):
   if len(array) <= 1:
     return array
   else:
-    first_half = mergesort(array[:len(array)/2], is_picking_from_first)
-    second_half = mergesort(array[len(array)/2:], is_picking_from_first)
-    return merge(first_half, second_half, is_picking_from_first)
+    first_half = mergesort(array[:len(array)/2], compare)
+    second_half = mergesort(array[len(array)/2:], compare)
+    return merge(first_half, second_half, compare)
 
-def merge(array1, array2, is_picking_from_first):
+def merge(array1, array2, compare):
   merged = []
   i = 0
   j = 0
   while len(array1) > i and len(array2) > j:
-    if is_picking_from_first(array1[i], array2[j]):
+    # se verdadeiro pega da primeira array
+    if compare(array1[i], array2[j]):
       merged.append(array1[i])
       i += 1
     else:

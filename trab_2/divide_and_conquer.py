@@ -49,23 +49,3 @@ def get_points_in_L(left, right, l_middle_x, l_half_width):
       l_points.append(point)
 
   return l_points
-      
-  
-
-
-
-#plan = [
-# Point(1,2),
-# Point(3,8),
-# Point(2,1),
-# Point(3,7),
-# Point(8,9),
-# Point(2,6),
-# Point(3.5,7),
-# Point(3.4,7),
-# Point(1,5)
-#]
-#
-#closest_pair = closest_pair(plan)
-#print closest_pair
-#print closest_pair.distance()
