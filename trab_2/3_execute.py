@@ -28,6 +28,8 @@ def run_benchmark(instances_group, closest_pair):
   qnt_points = len(instances_group[0])
   print "Usando %d pontos: (Tempo / Distancia)" % qnt_points
   medium_time = 0
+  distances_sum = 0
+  computed_distances = 0
   for i in xrange(0, 10):
     ini = time.time()
     closest = closest_pair(instances_group[i])
@@ -38,8 +40,14 @@ def run_benchmark(instances_group, closest_pair):
     if closest is None:
       print "  %.3f / ---" % instance_time
     else:
+      computed_distances += 1
+      distances_sum += closest.distance()
       print "  %.3f / %.7f" % (instance_time, closest.distance())
   print "  Tempo medio: %.3f" % medium_time
+  if computed_distances == 0:
+    print "  Distancia media: ---"
+  else:
+    print "  Distancia media: %.7f" % (distances_sum / computed_distances)
 
 #
 # @desc   : compara se as distancias calculadas por cada algoritmo sao

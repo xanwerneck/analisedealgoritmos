@@ -11,6 +11,7 @@ Usando 25 pontos: (Tempo / Distancia)
   0.002 / 0.0307840
   0.002 / 0.0259327
   Tempo medio: 0.002
+  Distancia media: 0.0277633
 Usando 50 pontos: (Tempo / Distancia)
   0.012 / 0.0123307
   0.015 / 0.0114862
@@ -23,6 +24,7 @@ Usando 50 pontos: (Tempo / Distancia)
   0.008 / 0.0090575
   0.008 / 0.0123888
   Tempo medio: 0.009
+  Distancia media: 0.0118530
 Usando 100 pontos: (Tempo / Distancia)
   0.033 / 0.0054838
   0.033 / 0.0024111
@@ -35,6 +37,7 @@ Usando 100 pontos: (Tempo / Distancia)
   0.033 / 0.0098969
   0.033 / 0.0074898
   Tempo medio: 0.033
+  Distancia media: 0.0081188
 Usando 200 pontos: (Tempo / Distancia)
   0.131 / 0.0031521
   0.132 / 0.0088358
@@ -47,6 +50,7 @@ Usando 200 pontos: (Tempo / Distancia)
   0.124 / 0.0032187
   0.125 / 0.0008129
   Tempo medio: 0.132
+  Distancia media: 0.0040356
 Usando 400 pontos: (Tempo / Distancia)
   0.531 / 0.0014020
   0.534 / 0.0013124
@@ -59,6 +63,7 @@ Usando 400 pontos: (Tempo / Distancia)
   0.527 / 0.0003855
   0.518 / 0.0018878
   Tempo medio: 0.531
+  Distancia media: 0.0014477
 Usando 800 pontos: (Tempo / Distancia)
   2.084 / 0.0002761
   2.190 / 0.0007798
@@ -71,6 +76,7 @@ Usando 800 pontos: (Tempo / Distancia)
   2.073 / 0.0008233
   2.119 / 0.0006443
   Tempo medio: 2.086
+  Distancia media: 0.0010176
 Usando 1600 pontos: (Tempo / Distancia)
   8.536 / 0.0003780
   8.432 / 0.0004076
@@ -83,6 +89,7 @@ Usando 1600 pontos: (Tempo / Distancia)
   8.443 / 0.0000759
   8.443 / 0.0004641
   Tempo medio: 8.444
+  Distancia media: 0.0004268
 Usando 3200 pontos: (Tempo / Distancia)
   34.006 / 0.0002784
   34.947 / 0.0002041
@@ -95,6 +102,7 @@ Usando 3200 pontos: (Tempo / Distancia)
   33.266 / 0.0004868
   32.593 / 0.0000810
   Tempo medio: 33.732
+  Distancia media: 0.0002176
 Usando 6400 pontos: (Tempo / Distancia)
   136.850 / 0.0000927
   140.719 / 0.0000698
@@ -107,6 +115,7 @@ Usando 6400 pontos: (Tempo / Distancia)
   133.743 / 0.0000823
   135.519 / 0.0000609
   Tempo medio: 138.366
+  Distancia media: 0.0000635
 Usando 12800 pontos: (Tempo / Distancia)
   180.000 / ---
   180.000 / ---
@@ -156,6 +165,7 @@ Usando 25 pontos: (Tempo / Distancia)
   0.000 / 0.0307840
   0.000 / 0.0259327
   Tempo medio: 0.001
+  Distancia media: 0.0277633
 Usando 50 pontos: (Tempo / Distancia)
   0.001 / 0.0123307
   0.001 / 0.0114862
@@ -168,6 +178,7 @@ Usando 50 pontos: (Tempo / Distancia)
   0.001 / 0.0090575
   0.001 / 0.0123888
   Tempo medio: 0.001
+  Distancia media: 0.0118530
 Usando 100 pontos: (Tempo / Distancia)
   0.003 / 0.0054838
   0.003 / 0.0024111
@@ -180,6 +191,7 @@ Usando 100 pontos: (Tempo / Distancia)
   0.003 / 0.0098969
   0.003 / 0.0074898
   Tempo medio: 0.003
+  Distancia media: 0.0081188
 Usando 200 pontos: (Tempo / Distancia)
   0.007 / 0.0031521
   0.008 / 0.0088358
@@ -192,6 +204,7 @@ Usando 200 pontos: (Tempo / Distancia)
   0.007 / 0.0032187
   0.006 / 0.0008129
   Tempo medio: 0.007
+  Distancia media: 0.0040356
 Usando 400 pontos: (Tempo / Distancia)
   0.028 / 0.0014020
   0.019 / 0.0013124
@@ -204,6 +217,7 @@ Usando 400 pontos: (Tempo / Distancia)
   0.017 / 0.0003855
   0.017 / 0.0018878
   Tempo medio: 0.018
+  Distancia media: 0.0014477
 Usando 800 pontos: (Tempo / Distancia)
   0.037 / 0.0002761
   0.036 / 0.0007798
@@ -216,6 +230,7 @@ Usando 800 pontos: (Tempo / Distancia)
   0.038 / 0.0008233
   0.040 / 0.0006443
   Tempo medio: 0.038
+  Distancia media: 0.0010176
 Usando 1600 pontos: (Tempo / Distancia)
   0.088 / 0.0003780
   0.091 / 0.0004076
@@ -228,6 +243,7 @@ Usando 1600 pontos: (Tempo / Distancia)
   0.090 / 0.0000759
   0.086 / 0.0004641
   Tempo medio: 0.090
+  Distancia media: 0.0004268
 Usando 3200 pontos: (Tempo / Distancia)
   0.207 / 0.0002784
   0.196 / 0.0002041
@@ -240,6 +256,7 @@ Usando 3200 pontos: (Tempo / Distancia)
   0.299 / 0.0004868
   0.205 / 0.0000810
   Tempo medio: 0.214
+  Distancia media: 0.0002176
 Usando 6400 pontos: (Tempo / Distancia)
   0.492 / 0.0000927
   0.506 / 0.0000698
@@ -252,6 +269,7 @@ Usando 6400 pontos: (Tempo / Distancia)
   0.456 / 0.0000823
   0.464 / 0.0000609
   Tempo medio: 0.488
+  Distancia media: 0.0000635
 Usando 12800 pontos: (Tempo / Distancia)
   1.024 / 0.0000304
   1.106 / 0.0001079
@@ -264,6 +282,7 @@ Usando 12800 pontos: (Tempo / Distancia)
   1.284 / 0.0000545
   1.166 / 0.0001066
   Tempo medio: 1.155
+  Distancia media: 0.0000588
 Usando 25600 pontos: (Tempo / Distancia)
   2.518 / 0.0000352
   2.803 / 0.0000237
@@ -276,6 +295,7 @@ Usando 25600 pontos: (Tempo / Distancia)
   2.319 / 0.0000442
   2.542 / 0.0000217
   Tempo medio: 2.420
+  Distancia media: 0.0000283
 Usando 51200 pontos: (Tempo / Distancia)
   5.206 / 0.0000178
   5.018 / 0.0000219
@@ -288,5 +308,6 @@ Usando 51200 pontos: (Tempo / Distancia)
   5.155 / 0.0000099
   5.250 / 0.0000063
   Tempo medio: 5.159
+  Distancia media: 0.0000157
 ---- Verificando se as distancias computadas sao iguais ----
   Todas as distancias calculadas sao iguais
