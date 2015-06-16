@@ -1,48 +1,57 @@
+# version : 1.1 revision
 import time
 from graph_base import adjacents, nodes
 
 def dfs(graph):
 
-  visited = {} # armazena todos os nos visitados
-  trees   = [] # array com as componentes + arestas
+  # hash mapeando vertices do grafo ja visitados
+  visited = {}
+  
+  # array com as componentes
+  # cada indice do array contem vertices + arestas da componente
+  components_conex   = [] 
+
   for node in graph:
     if visited.get(node) == None:
-      tree = search(graph, node, visited)
-      trees.append(tree)
-  return trees
+      component = search(graph, node, visited)
+      components_conex.append(component)
+  return components_conex
 
 
 def search(graph, nod, visited):
-  retorno  = []     # retorna o caminho + arestas da componente
-  tree_way = {}     # contem o caminho pela componente conexa
-  edges_c  = []     # mantem as arestas
-  retorno.append(tree_way)
-  retorno.append(edges_c)
+  # hash com vertices da componente conexa
+  nodes_comp = {}
 
-  stack    = []     # pilha para eliminar as recursoes
-  stack.append(nod) # inicia a pilha com o no de entrada
+  # array com as arestas da componente
+  edges_comp  = [] 
+
+  component_conex  = []       
+  component_conex.append(nodes_comp)
+  component_conex.append(edges_comp)
+
+  stack    = []     
+  stack.append(nod) 
 
   while(len(stack) > 0):
     node = stack.pop()
     for node_adj in adjacents(node):
-      if not tree_way.get(node_adj) and not visited.get(node_adj):
+      if not nodes_comp.get(node_adj) and not visited.get(node_adj):
         stack.append(node_adj)
-        edge = [node, node_adj]
-        edges_c.append(edge)
-    tree_way[node] = 1
+        edges_comp.append([node, node_adj])
+    nodes_comp[node] = 1
     visited[node]  = 1
 
-  return retorno
+  return component_conex
 
 
 ini = time.time()
-visit = dfs(nodes())
+components_conex = dfs(nodes())
 fim = time.time()
 print "Tempo de execucao: ", fim-ini
 print "---------------------------------"
-print "Numero de comp. conexas: ", len(visit)
+print "Numero de comp. conexas: ", len(components_conex)
 print "---------------------------------"
-for x in xrange(0, len(visit)):
+for x in xrange(0, len(components_conex)):
   print "---------COMPONENTE-", x + 1
-  print "-Qtde vertices-", len(visit[x][0])
-  print "-Qtde arestas- ", len(visit[x][1])
+  print "-Qtde vertices-", len(components_conex[x][0])
+  print "-Qtde arestas- ", len(components_conex[x][1])
